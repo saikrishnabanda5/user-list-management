@@ -53,7 +53,7 @@ const Login = () => {
                   : "border-gray-300 focus:ring-indigo-500"
               }`}
               placeholder="Enter your email"
-            />{" "}
+            />
           </div>
           {errors.email && (
             <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
