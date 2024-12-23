@@ -1,13 +1,9 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import {
-  FetchUserObj,
-  FunctionAddUser,
-  FunctionUpdateUser,
-} from "../Redux/Action";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { FunctionAddUser } from "../Redux/Action";
 
 function CreateUserModal({ show, onHide, activeUser }) {
   const [id, idchange] = useState(0);
@@ -87,10 +83,6 @@ function CreateUserModal({ show, onHide, activeUser }) {
               <button className="btn btn-primary" type="submit">
                 Submit
               </button>
-              |
-              <Link className="btn btn-danger" to={"/user"}>
-                Back
-              </Link>
             </div>
           </div>
         </form>

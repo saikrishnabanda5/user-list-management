@@ -2,8 +2,8 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { FetchUserObj, FunctionUpdateUser } from "../Redux/Action";
+import { useNavigate } from "react-router-dom";
+import { FunctionUpdateUser } from "../Redux/Action";
 
 function EditUserModal({ show, onHide, activeUser }) {
   const [id, idchange] = useState(0);
@@ -28,7 +28,7 @@ function EditUserModal({ show, onHide, activeUser }) {
     console.log("sdfsdf", returnedTarget);
     dispatch(FunctionUpdateUser(returnedTarget, activeUser?.id));
     onHide();
-    navigate("/user");
+    navigate(0);
   };
 
   // useEffect(() => {
@@ -106,10 +106,6 @@ function EditUserModal({ show, onHide, activeUser }) {
               <button className="btn btn-primary" type="submit">
                 Submit
               </button>
-              |
-              <Link className="btn btn-danger" to={"/user"}>
-                Back
-              </Link>
             </div>
           </div>
         </form>

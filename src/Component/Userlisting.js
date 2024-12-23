@@ -4,11 +4,13 @@ import { toast } from "react-toastify";
 import { FetchUserList, Removeuser } from "../Redux/Action";
 import EditUserModal from "./EditUserModal";
 import CreateUserModal from "./CreateUser";
+import { useNavigate } from "react-router-dom";
 
 const Userlisting = (props) => {
   const [modalShow, setModalShow] = useState(false);
   const [createUserModal, setCreateUserModal] = useState(false);
   const [activeUser, setActiveUser] = useState(0);
+  const navigate = useNavigate();
 
   function editUser(id) {
     setActiveUser(id);
@@ -24,8 +26,10 @@ const Userlisting = (props) => {
       props.removeuser(code);
       props.loaduser();
       toast.success("User removed successfully.");
+      navigate(0);
     }
   };
+
   return props.user.loading ? (
     <div>
       <h2>Loading...</h2>
