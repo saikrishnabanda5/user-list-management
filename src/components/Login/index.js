@@ -22,7 +22,7 @@ const Login = () => {
       });
       const { token } = response.data;
       localStorage.setItem("authToken", token);
-      navigate("/user-list");
+      navigate("/user");
     } catch (err) {}
   };
 
