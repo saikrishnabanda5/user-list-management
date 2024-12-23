@@ -1,7 +1,5 @@
 # Getting Started with User List Management
 
-## Available Scripts
-
 In the project directory, Please run the below commands after installing node modules:
 
 ### `npx json-server --watch src/Data/db.json --port 8000`
